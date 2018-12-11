@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boat.cs" />
+    <Compile Include="Harbour.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="FormBoat.cs">
       <SubType>Form</SubType>
@@ -57,7 +58,7 @@
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MotorBoat.cs" />
+    <Compile Include="SpeedBoat.cs" />
     <EmbeddedResource Include="FormBoat.resx">
       <DependentUpon>FormBoat.cs</DependentUpon>
     </EmbeddedResource>

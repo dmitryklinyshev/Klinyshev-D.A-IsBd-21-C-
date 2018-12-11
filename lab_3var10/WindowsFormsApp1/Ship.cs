@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormBoat;
+using WindowsFormHarbour;
 
-using static WindowsFormBoat.MotorBoat;
+using static WindowsFormHarbour.SpeedBoat;
 
 namespace WindowsFormsApp1
 {
@@ -21,6 +21,9 @@ namespace WindowsFormsApp1
 
     abstract class Ship : ITransport
     {
+
+      
+
         protected float _startPosX;
         protected float _startPosY;
         protected float _pictureWidth;
@@ -32,7 +35,7 @@ namespace WindowsFormsApp1
 
         public Color MainColor { protected set; get;}
 
-        public void setPosition(int x , int y, int width, int height)
+        public void setPosition(int x, int y, int width, int height)
         {
             _startPosX = x;
             _startPosY = y;
