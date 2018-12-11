@@ -35,6 +35,7 @@
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonCreateSport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,6 @@
             this.pictureBoxBoat.Size = new System.Drawing.Size(884, 461);
             this.pictureBoxBoat.TabIndex = 0;
             this.pictureBoxBoat.TabStop = false;
-            this.pictureBoxBoat.Click += new System.EventHandler(this.pictureBoxCars_Click);
             // 
             // buttonCreate
             // 
@@ -101,11 +101,22 @@
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.moveClick);
             // 
+            // buttonCreateSport
+            // 
+            this.buttonCreateSport.Location = new System.Drawing.Point(283, 24);
+            this.buttonCreateSport.Name = "buttonCreateSport";
+            this.buttonCreateSport.Size = new System.Drawing.Size(154, 23);
+            this.buttonCreateSport.TabIndex = 6;
+            this.buttonCreateSport.Text = "Создать гоночный катер";
+            this.buttonCreateSport.UseVisualStyleBackColor = true;
+            this.buttonCreateSport.Click += new System.EventHandler(this.createSportClick);
+            // 
             // FormBoat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonCreateSport);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
@@ -115,7 +126,6 @@
             this.Name = "FormBoat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BoatForm";
-            this.Load += new System.EventHandler(this.FormBoat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).EndInit();
             this.ResumeLayout(false);
 
@@ -128,6 +138,7 @@
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonRight;
         public System.Windows.Forms.PictureBox pictureBoxBoat;
+        private System.Windows.Forms.Button buttonCreateSport;
     }
 }
 

@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static WindowsFormBoat.SpeedBoat;
+using WindowsFormsApp1;
+using static WindowsFormBoat.MotorBoat;
+using static WindowsFormsApp1.Ship;
 
 namespace WindowsFormBoat { 
     
 
     public partial class FormBoat : Form
     {
-        
-        private SpeedBoat speedboat;
+       
+        private ITransport boat;
 
         public FormBoat()
         {
@@ -26,7 +28,7 @@ namespace WindowsFormBoat {
         {
             Bitmap bmp = new Bitmap(pictureBoxBoat.Width, pictureBoxBoat.Height);
             Graphics g = Graphics.FromImage(bmp);
-            speedboat.DrawCar(g);
+            boat.DrawBoat(g);
             pictureBoxBoat.Image = bmp;
         }
 
@@ -35,12 +37,21 @@ namespace WindowsFormBoat {
         private void createClick(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            speedboat = new SpeedBoat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
-Color.Yellow, true, true, true);
-            speedboat.setPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+            boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+            boat.setPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
            pictureBoxBoat.Height);
             Draw();
 
+        }
+
+        private void createSportClick(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            boat = new MotorBoat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
+Color.Yellow, true, true, true);
+            boat.setPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+           pictureBoxBoat.Height);
+            Draw();
         }
 
         private void moveClick(object sender, EventArgs e)
@@ -49,31 +60,23 @@ Color.Yellow, true, true, true);
             switch (name)
             {
                 case "buttonUp":
-                    speedboat.moveTransport(Direction.Up);
+                    boat.moveTransport(Direction.Up);
                     break;
                 case "buttonDown":
-                    speedboat.moveTransport(Direction.Down);
+                   boat.moveTransport(Direction.Down);
                     break;
                 case "buttonLeft":
-                    speedboat.moveTransport(Direction.Left);
+                    boat.moveTransport(Direction.Left);
                     break;
                 case "buttonRight":
-                    speedboat.moveTransport(Direction.Right);
+                    boat.moveTransport(Direction.Right);
                     break;
             }
             Draw();
 
 
         }
-
-        private void pictureBoxCars_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormBoat_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+
 }
+
