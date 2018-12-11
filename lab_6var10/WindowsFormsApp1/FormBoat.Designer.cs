@@ -37,16 +37,23 @@
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonSetBoat = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrev)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxHarbour
             // 
             this.pictureBoxHarbour.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxHarbour.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxHarbour.Location = new System.Drawing.Point(0, 24);
             this.pictureBoxHarbour.Name = "pictureBoxHarbour";
-            this.pictureBoxHarbour.Size = new System.Drawing.Size(676, 461);
+            this.pictureBoxHarbour.Size = new System.Drawing.Size(676, 437);
             this.pictureBoxHarbour.TabIndex = 0;
             this.pictureBoxHarbour.TabStop = false;
             // 
@@ -83,6 +90,7 @@
             this.buttonTake.TabIndex = 6;
             this.buttonTake.Text = "Забрать";
             this.buttonTake.UseVisualStyleBackColor = true;
+            this.buttonTake.Click += new System.EventHandler(this.buttonTake_Click_1);
             // 
             // pictureBoxPrev
             // 
@@ -120,6 +128,48 @@
             this.buttonSetBoat.UseVisualStyleBackColor = true;
             this.buttonSetBoat.Click += new System.EventHandler(this.buttonSetBoat_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMain});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMain
+            // 
+            this.toolStripMain.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSave,
+            this.toolStripLoad});
+            this.toolStripMain.Name = "toolStripMain";
+            this.toolStripMain.Size = new System.Drawing.Size(48, 20);
+            this.toolStripMain.Text = "Файл";
+            // 
+            // toolStripSave
+            // 
+            this.toolStripSave.Name = "toolStripSave";
+            this.toolStripSave.Size = new System.Drawing.Size(180, 22);
+            this.toolStripSave.Text = "Сохранить";
+            this.toolStripSave.Click += new System.EventHandler(this.toolStripSave_Click);
+            // 
+            // toolStripLoad
+            // 
+            this.toolStripLoad.Name = "toolStripLoad";
+            this.toolStripLoad.Size = new System.Drawing.Size(180, 22);
+            this.toolStripLoad.Text = "Загрузить";
+            this.toolStripLoad.Click += new System.EventHandler(this.toolStripLoad_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Filter = "txt file | *.tx";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "txt file | *.tx";
+            // 
             // FormHarbour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,11 +184,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSetBoat);
             this.Controls.Add(this.pictureBoxHarbour);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "FormHarbour";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BoatForm";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrev)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +208,12 @@
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonSetBoat;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMain;
+        private System.Windows.Forms.ToolStripMenuItem toolStripSave;
+        private System.Windows.Forms.ToolStripMenuItem toolStripLoad;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
