@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
 
         }
 
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -44,25 +44,30 @@ namespace WindowsFormsApp1
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            var boat = level[i];
-                            if (boat != null)
+                            try
                             {
-                                if (boat.GetType().Name == "Boat")
+                                var boat = level[i];
+                                if (boat != null)
                                 {
-                                    WriteToFile(i + ":Boat:", fs);
+                                    if (boat.GetType().Name == "Boat")
+                                    {
+                                        WriteToFile(i + ":Boat:", fs);
+                                    }
+                                    if (boat.GetType().Name == "MotorBoat")
+                                    {
+                                        WriteToFile(i + ":MotorBoat:", fs);
+                                    }
+                                    WriteToFile(boat + Environment.NewLine, fs);
                                 }
-                                if (boat.GetType().Name == "MotorBoat")
-                                {
-                                    WriteToFile(i + ":MotorBoat:", fs);
-                                }
-                                WriteToFile(boat + Environment.NewLine, fs);
                             }
+                            finally { }
                         }
+                    
                     }
 
                 }
             }
-            return true;
+            
         }
 
         public void WriteToFile(string text, FileStream stream)
@@ -75,7 +80,7 @@ namespace WindowsFormsApp1
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
 
             string bufferTextFromFile = "";
@@ -104,7 +109,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                return false;
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
             ITransport boat = null;
