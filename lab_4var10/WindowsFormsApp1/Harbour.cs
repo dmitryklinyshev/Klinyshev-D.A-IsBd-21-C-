@@ -9,9 +9,11 @@ namespace WindowsFormsApp1
 {
    public class Harbour<T> where T:class , ITransport
     {
-        private T[] _places;
+        private Dictionary<int, T> _places;
 
-        private int _placeSizeWidth = 210;
+        private int MaxCount;
+
+        private int _placeSizeWidth = 250;
         private int _placeSizeHeight = 80;
 
         private int PictureWidth { get; set; }
@@ -19,24 +21,25 @@ namespace WindowsFormsApp1
 
         public Harbour(int sizes, int pictureWidth, int pictureHeight)
         {
-            _places = new T[sizes];
+            MaxCount = sizes;
+            _places = new Dictionary<int, T>();
             PictureHeight = pictureHeight;
             PictureWidth = pictureWidth;
-            for (int i = 0; i < _places.Length; i++)
-            {
-                _places[i] = null;
-            }
         }
 
         public static int operator + (Harbour<T> h, T boat)
         {
-            for(int i = 0; i < h._places.Length; i++)
+            if (h._places.Count == h.MaxCount)
+            {
+                return -1;
+            }
+            for(int i = 0; i < h.MaxCount; i++)
             {
                 if (h.CheckFreePlace(i))
                 {
-                    h._places[i] = boat;
-                    h._places[i].setPosition(5 + i / 5 * h._placeSizeWidth + 5, i % 5 * h._placeSizeHeight + 15
-                        , h.PictureWidth, h.PictureHeight);
+                    h._places.Add(i, boat);
+                        h._places[i].setPosition(5 + i / 5 * h._placeSizeWidth + 5, i % 5 * h._placeSizeHeight + 15
+                        , h.PictureWidth,  h.PictureHeight);
                     return i;
 
                 }
@@ -46,7 +49,7 @@ namespace WindowsFormsApp1
 
         public static T operator - (Harbour<T> h, int index)
         {
-            if(index < 0 || index > h._places.Length)
+            if(index < 0 || index > h._places.Count)
             {
                 return null;
             }
@@ -54,7 +57,7 @@ namespace WindowsFormsApp1
             if (!h.CheckFreePlace(index))
             {
                 T boat = h._places[index];
-                h._places[index] = null;
+                h._places.Remove(index);
                 return boat;
             }
 
@@ -63,29 +66,28 @@ namespace WindowsFormsApp1
                 
         private bool CheckFreePlace(int index)
         {
-            return _places[index] == null;   
+            return !_places.ContainsKey(index);   
         }
 
         public void Draw(Graphics g)
         {
             DrawMarking(g);
-            for(int i = 0 ; i < _places.Length; i++)
+            var keys = _places.Keys.ToList();
+            for(int i = 0 ; i < keys.Count; i++)
             {
-                if (!CheckFreePlace(i))
-                {
-                    _places[i].DrawBoat(g);
-                }
+                _places[keys[i]].DrawBoat(g);
             }
         }
+     
 
         private void DrawMarking(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);
 
-            g.DrawRectangle(pen, 0, 0, (_places.Length / 5) * _placeSizeWidth, 480);
-            for(int i = 0; i < _places.Length; i++)
+            g.DrawRectangle(pen, 0, 0, (MaxCount ) * _placeSizeWidth, 480);
+            for(int i = 0; i < MaxCount  ; i++)
             {
-                for(int j = 0; j < 6; j++)
+                for(int j = 0; j < 6; ++j)
                 {
                     g.DrawLine(pen, i * _placeSizeWidth, j * _placeSizeHeight, i * _placeSizeWidth + 110,
                         j * _placeSizeHeight);
