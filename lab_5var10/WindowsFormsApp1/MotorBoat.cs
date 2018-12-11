@@ -77,6 +77,11 @@ namespace WindowsFormBoat
             }
             base.DrawBoat(g);
         }
+
+        public void setDopColor(Color color)
+        {
+            DopColor = color;
+        }
     }
 }
 

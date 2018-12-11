@@ -41,6 +41,11 @@ namespace WindowsFormsApp1
             _pictureHeight = height;
         }
 
+        public void setMainColor(Color color)
+        {
+            MainColor = color;
+        }
+
         public abstract void DrawBoat(Graphics g);
 
        

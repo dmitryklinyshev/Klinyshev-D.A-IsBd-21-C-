@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxHarbour = new System.Windows.Forms.PictureBox();
-            this.buttonSetBoat = new System.Windows.Forms.Button();
-            this.buttonSetSpeedBoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +36,7 @@
             this.pictureBoxPrev = new System.Windows.Forms.PictureBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonSetBoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrev)).BeginInit();
             this.SuspendLayout();
@@ -50,26 +49,6 @@
             this.pictureBoxHarbour.Size = new System.Drawing.Size(676, 461);
             this.pictureBoxHarbour.TabIndex = 0;
             this.pictureBoxHarbour.TabStop = false;
-            // 
-            // buttonSetBoat
-            // 
-            this.buttonSetBoat.Location = new System.Drawing.Point(715, 122);
-            this.buttonSetBoat.Name = "buttonSetBoat";
-            this.buttonSetBoat.Size = new System.Drawing.Size(136, 58);
-            this.buttonSetBoat.TabIndex = 1;
-            this.buttonSetBoat.Text = "Пришвартовать лодку";
-            this.buttonSetBoat.UseVisualStyleBackColor = true;
-            this.buttonSetBoat.Click += new System.EventHandler(this.buttonSetBoat_Click);
-            // 
-            // buttonSetSpeedBoat
-            // 
-            this.buttonSetSpeedBoat.Location = new System.Drawing.Point(715, 186);
-            this.buttonSetSpeedBoat.Name = "buttonSetSpeedBoat";
-            this.buttonSetSpeedBoat.Size = new System.Drawing.Size(138, 58);
-            this.buttonSetSpeedBoat.TabIndex = 2;
-            this.buttonSetSpeedBoat.Text = "Пришвартовать катер";
-            this.buttonSetSpeedBoat.UseVisualStyleBackColor = true;
-            this.buttonSetSpeedBoat.Click += new System.EventHandler(this.buttonSetSpeedBoat_Click);
             // 
             // label1
             // 
@@ -104,7 +83,6 @@
             this.buttonTake.TabIndex = 6;
             this.buttonTake.Text = "Забрать";
             this.buttonTake.UseVisualStyleBackColor = true;
-            this.buttonTake.Click += new System.EventHandler(this.buttonTake_Click);
             // 
             // pictureBoxPrev
             // 
@@ -132,6 +110,16 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Уровни";
             // 
+            // buttonSetBoat
+            // 
+            this.buttonSetBoat.Location = new System.Drawing.Point(715, 122);
+            this.buttonSetBoat.Name = "buttonSetBoat";
+            this.buttonSetBoat.Size = new System.Drawing.Size(136, 58);
+            this.buttonSetBoat.TabIndex = 1;
+            this.buttonSetBoat.Text = "Добавить водное средство";
+            this.buttonSetBoat.UseVisualStyleBackColor = true;
+            this.buttonSetBoat.Click += new System.EventHandler(this.buttonSetBoat_Click);
+            // 
             // FormHarbour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,7 +132,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.maskedTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonSetSpeedBoat);
             this.Controls.Add(this.buttonSetBoat);
             this.Controls.Add(this.pictureBoxHarbour);
             this.Name = "FormHarbour";
@@ -160,8 +147,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxHarbour;
-        private System.Windows.Forms.Button buttonSetBoat;
-        private System.Windows.Forms.Button buttonSetSpeedBoat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label2;
@@ -169,6 +154,7 @@
         private System.Windows.Forms.PictureBox pictureBoxPrev;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonSetBoat;
     }
 }
 

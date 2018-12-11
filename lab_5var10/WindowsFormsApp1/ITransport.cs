@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
         void moveTransport(Direction direction);
 
         void DrawBoat(Graphics g);
+
+        void setMainColor(Color color);
         
     }
 }
