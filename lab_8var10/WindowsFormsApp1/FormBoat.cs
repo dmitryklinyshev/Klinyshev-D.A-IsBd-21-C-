@@ -35,12 +35,7 @@ namespace WindowsFormHarbour {
             }
             listBoxLevels.SelectedIndex = 0;
         }
-
-        //private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Draw();
-        //}
-
+      
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -88,8 +83,6 @@ MessageBoxIcon.Error);
                 }
             }
         }
-
-
 
         private void ListBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -172,7 +165,6 @@ MessageBoxIcon.Error);
                 Draw();
             }
         }
-
 
             private void Sort_Click(object sender, EventArgs e)
             {
