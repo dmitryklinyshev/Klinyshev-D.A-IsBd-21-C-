@@ -63,17 +63,7 @@ Color.Yellow, true, true, true);
             }
             Draw();
 
-
         }
-
-        private void pictureBoxCars_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormBoat_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
