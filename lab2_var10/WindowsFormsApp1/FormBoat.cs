@@ -74,13 +74,8 @@ Color.Yellow, true, true, true);
             }
             Draw();
 
-<<<<<<< HEAD:lab2_var10/WindowsFormsApp1/FormBoat.cs
 
         }
-=======
-        }
-        
->>>>>>> lab_1:lab1_var10/WindowsFormsApp1/FormBoat.cs
     }
 
 }
