@@ -11,15 +11,7 @@ using static WindowsFormBoat.MotorBoat;
 namespace WindowsFormsApp1
 {
 
-    public enum Direction
-    {
-        Up,
-        Down,
-        Left,
-        Right
-    } 
-
-    abstract class Ship : ITransport
+       abstract class Ship : ITransport
     {
         protected float _startPosX;
         protected float _startPosY;

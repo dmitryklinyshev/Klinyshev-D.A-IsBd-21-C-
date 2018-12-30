@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boat.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="FormBoat.cs">
       <SubType>Form</SubType>
