@@ -10,15 +10,6 @@ using WindowsFormHarbour;
 
 namespace WindowsFormsApp1
 {
-
-    public enum Direction
-    {
-        Up,
-        Down,
-        Left,
-        Right
-    } 
-
     abstract class Ship : ITransport
     {
 
