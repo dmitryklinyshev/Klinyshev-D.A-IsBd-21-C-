@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         {
             if (h._places.Count == h.MaxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for(int i = 0; i < h.MaxCount; i++)
             {
@@ -61,11 +61,11 @@ namespace WindowsFormsApp1
                 return boat;
             }
 
-            return null;
+            throw new ParkingNotFoundException(index);
         }
 
         private bool CheckFreePlace(int index)
-        {
+        { 
             return !_places.ContainsKey(index);   
         }
 
@@ -103,8 +103,8 @@ namespace WindowsFormsApp1
                 if (_places.ContainsKey(ind))
                 {
                     return _places[ind];
-                }   
-                return null;
+                }
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -113,6 +113,10 @@ namespace WindowsFormsApp1
                     _places.Add(ind, value);
                     _places[ind].setPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 *
                     _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
