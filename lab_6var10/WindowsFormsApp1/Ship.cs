@@ -10,6 +10,7 @@ using WindowsFormHarbour;
 
 namespace WindowsFormsApp1
 {
+
     abstract class Ship : ITransport
     {
 

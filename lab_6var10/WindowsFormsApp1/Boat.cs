@@ -14,7 +14,18 @@ namespace WindowsFormsApp1
         protected const int boatWidth = 160;
 
         protected const int boatHeight = 60;
+        private string v;
 
+        public Boat(string info)
+        {
+            string[] strs = info.Split(';');
+            if(strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
 
         public Boat(int maxSpeed, float weight, Color mainColor)
         {
@@ -90,6 +101,11 @@ namespace WindowsFormsApp1
                     break;
 
             }
+        }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
 
 
