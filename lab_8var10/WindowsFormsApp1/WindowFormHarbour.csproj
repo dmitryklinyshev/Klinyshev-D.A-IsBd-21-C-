@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Harbour.cs" />
     <Compile Include="MultiLevelHarbour.cs" />
+    <Compile Include="ParkingAlreadyHaveException.cs" />
     <Compile Include="ParkingNotFoundException.cs" />
     <Compile Include="ParkingOverflowException.cs" />
     <Compile Include="PublicOccupiedPlaceException.cs" />

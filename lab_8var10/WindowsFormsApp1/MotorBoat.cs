@@ -9,7 +9,7 @@ using WindowsFormsApp1;
 
 namespace WindowsFormBoat
 {
-    class MotorBoat : Boat
+    class MotorBoat : Boat, IComparable<MotorBoat>, IEquatable<MotorBoat>
     {
 
         public Color DopColor { private set; get; }
@@ -103,8 +103,85 @@ namespace WindowsFormBoat
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Backpart + ";" + Engine + ";" + Frontpart ;
         }
+
+       
+
+        public int CompareTo(MotorBoat other)
+        {
+            var res = (this is Boat).CompareTo(other is Boat);
+            if(res != 0)
+            {
+                return res;
+            }
+            if(DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if(Backpart != other.Backpart)
+            {
+                Backpart.CompareTo(other.Backpart);
+            }
+            if(Frontpart != other.Frontpart)
+            {
+                Frontpart.CompareTo(other.Frontpart);
+            }
+            if(Engine != other.Engine)
+            {
+                Engine.CompareTo(other.Engine);
+            }
+            return 0;
+        }
+        public bool Equals(MotorBoat other)
+        {
+            var res = (this as Boat).Equals(other as Boat);
+            if (!res)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Backpart != other.Backpart)
+            {
+                return false;
+            }
+            if (Frontpart != other.Frontpart)
+            {
+                return false;
+            }
+            if (Engine != other.Engine)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            MotorBoat carObj = obj as MotorBoat;
+            if (carObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
-
 
 

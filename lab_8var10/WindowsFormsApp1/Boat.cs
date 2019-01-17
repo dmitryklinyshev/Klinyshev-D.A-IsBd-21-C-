@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Boat : Ship
+    class Boat : Ship, IComparable<Boat>, IEquatable<Boat>
     {
 
         protected const int boatWidth = 160;
@@ -34,6 +34,8 @@ namespace WindowsFormsApp1
             MainColor = mainColor;
 
         }
+
+      
 
         public override void DrawBoat(Graphics g)
         {
@@ -68,6 +70,8 @@ namespace WindowsFormsApp1
 
 
         }
+
+    
 
         public override void moveTransport(Direction direction)
         {
@@ -108,7 +112,70 @@ namespace WindowsFormsApp1
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
 
+        public int CompareTo(Boat other)
+        {
+            if(other == null)
+            {
+                return 1;
+            }
+            if(MaxSpeed != other.MaxSpeed)
+            {
+                return MaxSpeed.CompareTo(other.MaxSpeed);
+            }
+            if(Weight != other.Weight)
+            {
+                return Weight.CompareTo(other.Weight);
+            }
+            if(MainColor != other.MainColor)
+            {
+                return MainColor.Name.CompareTo(other.MainColor);
+            }
+            return 0;
+        }
+        public bool Equals(Boat other)
+        {
+            if(other == null)
+            {
+                return false;
+            }
+            if(MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if(Weight != other.Weight)
+            {
+                return false;
+            }
+            if(MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
 
+        public override bool Equals(object obj)
+        {
+            if(obj == null)
+            {
+                return false;
+            }
+
+            Boat boatObj = obj as Boat;
+            if(boatObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return base.Equals(boatObj);
+            }
+        
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
 
