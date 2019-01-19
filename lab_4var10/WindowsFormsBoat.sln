@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowFormBoat", "WindowsFormsApp1\WindowFormBoat.csproj", "{4FA4A4A2-E039-4F79-A88E-9EE21C673336}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowFormHarbour", "WindowsFormsApp1\WindowFormHarbour.csproj", "{4FA4A4A2-E039-4F79-A88E-9EE21C673336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

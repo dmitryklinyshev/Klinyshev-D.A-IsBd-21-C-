@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static WindowsFormHarbour.SpeedBoat;
 using static WindowsFormsApp1.Ship;
 
 namespace WindowsFormsApp1

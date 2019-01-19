@@ -6,15 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormHarbour;
 
-using static WindowsFormHarbour.SpeedBoat;
+
 
 namespace WindowsFormsApp1
 {
 
-       abstract class Ship : ITransport
+    abstract class Ship : ITransport
     {
-
-      
 
         protected float _startPosX;
         protected float _startPosY;
