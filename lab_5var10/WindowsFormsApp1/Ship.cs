@@ -10,7 +10,6 @@ using WindowsFormHarbour;
 
 namespace WindowsFormsApp1
 {
-
     abstract class Ship : ITransport
     {
 
@@ -31,6 +30,11 @@ namespace WindowsFormsApp1
             _startPosY = y;
             _pictureWidth = width;
             _pictureHeight = height;
+        }
+
+        public void setMainColor(Color color)
+        {
+            MainColor = color;
         }
 
         public abstract void DrawBoat(Graphics g);
