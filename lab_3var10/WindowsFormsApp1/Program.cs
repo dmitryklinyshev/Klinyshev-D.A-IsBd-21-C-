@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormBoat
+namespace WindowsFormHarbour
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WindowsFormBoat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBoat());
+            Application.Run(new FormHarbour());
         }
     }
 }
